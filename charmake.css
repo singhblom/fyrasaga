@@ -11,11 +11,6 @@ h1, p {
   color: #333;
 }
 
-#wholepage {
-  -moz-column-count: 3; /* Firefox */
-  -webkit-column-count: 3; /* Safari and Chrome */
-  column-count: 3;
-}
 
 #character-name {
   color: #333;
@@ -25,14 +20,104 @@ h1, p {
   border: 0px solid #008000;
 }
 
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#wholepage {
+  padding: 5px;
+  width: 960px;
+  margin: 20px auto;
+}
+
+#header {
+  height: 180px;
+}
+
 #characteristics_box {
-  width: 90%;
-  position: relative;
+  width: 300px;
   border: 1px solid #ccc;
   background-color: #fff;
   padding:10px;
-  margin-top: 15px;
+  margin: 10px;
+  float: left;
 }
+
+#virtues_and_flaws_box {
+  width: 300px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px;
+  float: left;
+}
+
+#skills_box {
+  width: 300px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding:10px;
+  margin: 10px;
+  float: left;
+}
+
+#footer {
+  clear: both;
+}
+
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+  #wholepage {
+  width: 94%;  
+  }
+  
+  #characteristics_box {
+    width: 30%;
+  }
+  #virtues_and_flaws_box {
+    width: 30%;
+  }
+  #skills_box {
+    width: 30%;
+  }
+}
+
+/* for 700px or less */
+@media screen and (max-width: 740px) {
+  #wholepage {
+  width: 70%;  
+  }
+  #characteristics_box {
+    width: auto;
+    float: none;
+  }
+  #virtues_and_flaws_box {
+    width: auto;
+    float: none;
+  }
+  #skills_box {
+    width: auto;
+    float: none;
+  }
+}
+@media screen and (max-width: 740px) {
+  #wholepage {
+  width: 520px;
+  }
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+  #wholepage {
+    width: 90%;
+  }  
+  #header {
+    height: auto;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+
+
 
 #cost_teller {
   font-size: 8pt;
@@ -83,15 +168,6 @@ h1, p {
   border: 0px solid #008000;
 }
 
-#virtues_and_flaws_box {
-  width: 90%;
-  position: relative;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding:10px;
-  margin-top: 15px;
-}
-
 #virtue-flaw {
   margin-top: 5px;
 }
@@ -100,15 +176,6 @@ h1, p {
   color: #ccc;
   background-color : #fff;
   border: 0px solid #008000;
-}
-
-#skills_box {
-  width: 90%;
-  position: relative;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding:10px;
-  margin-top: 15px;
 }
 
 #skill {

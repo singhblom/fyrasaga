@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample app</title>
     <link rel="stylesheet" href="charmake.css">
     
@@ -10,19 +11,21 @@
     <link rel="import" href="xclickcounter.html">
   </head>
   <body>
-    <input id="character-name"  bind-value='characterName'>
-    <p>Character sheet for {{characterName}}.</p>
+    <div id="character_name">
+    <input id="character-name"  bind-value='c.name'>
+    <p>Character sheet for {{c.name}}.</p>
+    </div>
   <div id="wholepage">
     <div id="characteristics_box">
       <h2> Characteristics </h2>
-      <div is="x-click-counter" id="click_counter" name = "Intelligence" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Perception" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Strength" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Stamina" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Presence" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Communication" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Quickness" type="{{characteristics}}"></div>
-      <div is="x-click-counter" id="click_counter" name = "Dexterity" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Intelligence" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Perception" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Strength" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Stamina" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Presence" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Communication" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Quickness" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Dexterity" type="{{c.characteristics}}"></div>
       <div id="cost_teller">Points used: {{totalCost()}}</div>
     </div>
 
@@ -30,7 +33,7 @@
     <div id="virtues_and_flaws_box">
       <h2> Virtues and Flaws </h2>
 
-      <template iterate="x in virtuesAndFlaws">
+      <template iterate="x in c.virtuesAndFlaws.keys">
         <div id="virtue-flaw">{{x}}</div>
       </template>
 
@@ -43,8 +46,8 @@
     <div id="skills_box">
       <h2> Skills </h2>
 
-      <template iterate="x in skills.keys">
-        <div is="x-click-counter" id="click_counter" name = {{x}} type="{{skills}}"></div>
+      <template iterate="x in c.skills.keys">
+        <div is="x-click-counter" id="click_counter" name = {{x}} type="{{c.skills}}"></div>
       </template>
 
       <form on-submit="addSkill($event)">
