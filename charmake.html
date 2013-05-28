@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample app</title>
+    <link rel="stylesheet" href="charmake.css">
+    
+    <!-- import the click-counter -->
+    <link rel="import" href="xclickcounter.html">
+  </head>
+  <body>
+    <input id="character-name"  bind-value='characterName'>
+    <p>Character sheet for {{characterName}}.</p>
+  <div id="wholepage">
+    <div id="characteristics_box">
+      <h2> Characteristics </h2>
+      <div is="x-click-counter" id="click_counter" name = "Intelligence" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Perception" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Strength" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Stamina" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Presence" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Communication" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Quickness" type="{{characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Dexterity" type="{{characteristics}}"></div>
+      <div id="cost_teller">Points used: {{totalCost()}}</div>
+    </div>
+
+
+    <div id="virtues_and_flaws_box">
+      <h2> Virtues and Flaws </h2>
+
+      <template iterate="x in virtuesAndFlaws">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addVirtueOrFlaw($event)">
+        <input id="new_virtue_or_flaw" placeholder="New Virtue or Flaw"
+               on-change="addVirtueOrFlaw($event)">
+      </form>  
+    </div>
+
+    <div id="skills_box">
+      <h2> Skills </h2>
+
+      <template iterate="x in skills.keys">
+        <div is="x-click-counter" id="click_counter" name = {{x}} type="{{skills}}"></div>
+      </template>
+
+      <form on-submit="addSkill($event)">
+        <input id="new_skill" placeholder="New Skill"
+               on-change="addSkill($event)">
+      </form>
+      <div id="cost_teller">Points used: {{totalSkillCost()}}</div>
+    </div>
+    </div>
+
+    <script type="application/dart" src="charmake.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>
