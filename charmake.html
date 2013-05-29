@@ -11,9 +11,13 @@
     <link rel="import" href="xclickcounter.html">
   </head>
   <body>
-    <div id="character_name">
+    <div id="title_box">
     <input id="character-name"  bind-value='c.name'>
-    <p>Character sheet for {{c.name}}.</p>
+    <p>Character sheet for {{c.name}}. Age
+    <input size='' style='width:30px' type="number" bind-value="c.sAge"/> 
+    in year
+    <input size='' style='width:30px' type="number" bind-value="c.sYear"/>.
+    </p>
     </div>
   <div id="wholepage">
     <div id="characteristics_box">
@@ -37,9 +41,23 @@
         <div id="virtue-flaw">{{x}}</div>
       </template>
 
-      <form on-submit="addVirtueOrFlaw($event)">
+      <form on-submit="addDescription($event,c.virtuesAndFlaws,'#new_virtue_or_flaw','')">
         <input id="new_virtue_or_flaw" placeholder="New Virtue or Flaw"
-               on-change="addVirtueOrFlaw($event)">
+               on-change="addDescription($event,c.virtuesAndFlaws,'#new_virtue_or_flaw','')">
+      </form>  
+    </div>
+
+
+    <div id="virtues_and_flaws_box">
+      <h2> Relationships </h2>
+
+      <template iterate="x in c.relationships.keys">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addDescription($event,c.relationships,'#new_relationship','')">
+        <input id="new_relationship" placeholder="New Relationship"
+               on-change="addDescription($event,c.relationships,'#new_relationship','')">
       </form>  
     </div>
 
@@ -50,12 +68,37 @@
         <div is="x-click-counter" id="click_counter" name = {{x}} type="{{c.skills}}"></div>
       </template>
 
-      <form on-submit="addSkill($event)">
+      <form on-submit="addDescription($event,c.skills,'#new_skill',0)">
         <input id="new_skill" placeholder="New Skill"
-               on-change="addSkill($event)">
-      </form>
+               on-change="addDescription($event,c.skills,'#new_skill',0)">
+      </form>  
+
       <div id="cost_teller">Points used: {{totalSkillCost()}}</div>
+      <div id="cost_teller">Points available: {{c.age*15}}</div>
     </div>
+    
+    
+    <div id="chronicle_box">
+      <h2> Chronicle </h2>
+
+      <template iterate="x in c.chronicle.keys">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addDescription($event,c.chronicle,'#new_chronicle','')">
+        <input id="new_chronicle" placeholder="New Chronicle"
+               on-change="addDescription($event,c.chronicle,'#new_chronicle','')">
+      </form>  
+    </div>
+
+
+    <div id="chronicle_box">
+      <h2> Character </h2>
+      <p> {{c.stringify()}} </p>
+    </div>
+
+    
+    
     </div>
 
     <script type="application/dart" src="charmake.dart"></script>

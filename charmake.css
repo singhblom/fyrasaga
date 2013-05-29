@@ -1,5 +1,9 @@
 body {
-  background-color: #F8F8F8;
+  background-color: #ccc;
+  /*background-image:url('knot.png');
+  background-repeat:no-repeat;
+  background-position: right;
+  background-size: 250px 250px;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -11,111 +15,27 @@ h1, p {
   color: #333;
 }
 
+input  {
+  border: 0px;
+}
 
 #character-name {
   color: #333;
   font-size: 24px;
   font-weight: bold;
-  background-color : #F8F8F8;
-  border: 0px solid #008000;
 }
 
-/************************************************************************************
-STRUCTURE
-*************************************************************************************/
-#wholepage {
-  padding: 5px;
-  width: 960px;
-  margin: 20px auto;
-}
 
-#header {
-  height: 180px;
-}
-
-#characteristics_box {
-  width: 300px;
+#title_box {
+  width: 500px;
   border: 1px solid #ccc;
+  border-radius: 5px;
   background-color: #fff;
   padding:10px;
-  margin: 10px;
-  float: left;
-}
-
-#virtues_and_flaws_box {
-  width: 300px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding: 10px;
-  margin: 10px;
-  float: left;
-}
-
-#skills_box {
-  width: 300px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  padding:10px;
-  margin: 10px;
-  float: left;
-}
-
-#footer {
+  margin: 100px auto 20px auto;
   clear: both;
 }
 
-/* for 980px or less */
-@media screen and (max-width: 980px) {
-  #wholepage {
-  width: 94%;  
-  }
-  
-  #characteristics_box {
-    width: 30%;
-  }
-  #virtues_and_flaws_box {
-    width: 30%;
-  }
-  #skills_box {
-    width: 30%;
-  }
-}
-
-/* for 700px or less */
-@media screen and (max-width: 740px) {
-  #wholepage {
-  width: 70%;  
-  }
-  #characteristics_box {
-    width: auto;
-    float: none;
-  }
-  #virtues_and_flaws_box {
-    width: auto;
-    float: none;
-  }
-  #skills_box {
-    width: auto;
-    float: none;
-  }
-}
-@media screen and (max-width: 740px) {
-  #wholepage {
-  width: 520px;
-  }
-}
-/* for 480px or less */
-@media screen and (max-width: 480px) {
-  #wholepage {
-    width: 90%;
-  }  
-  #header {
-    height: auto;
-  }
-  h1 {
-    font-size: 24px;
-  }
-}
 
 
 
@@ -127,7 +47,6 @@ STRUCTURE
 
 
 #click_counter {
-  font-size: 14pt;
   text-align: left;
   margin-top: 5px;
 }
@@ -161,13 +80,11 @@ STRUCTURE
   top:1px;
 }
 
-
 #new_virtue_or_flaw {
   color: #ccc;
   background-color : #fff;
   border: 0px solid #008000;
 }
-
 #virtue-flaw {
   margin-top: 5px;
 }
@@ -177,7 +94,131 @@ STRUCTURE
   background-color : #fff;
   border: 0px solid #008000;
 }
-
 #skill {
   margin-top: 5px;
 }
+
+
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#wholepage {
+  padding: 5px;
+  width: 960px;
+  margin: 20px auto;
+}
+
+#header {
+  height: 180px;
+}
+
+#characteristics_box {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding:10px;
+  margin: 20px;
+  float: left;
+}
+
+#virtues_and_flaws_box {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+  margin: 20px;
+  float: left;
+}
+
+#skills_box {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding:10px;
+  margin: 20px;
+  float: left;
+}
+
+#chronicle_box {
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  padding:10px;
+  margin:20px auto 20px auto;
+  clear: both;
+}
+
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+  #wholepage {
+  width: 94%;  
+  }
+  
+  #characteristics_box {
+    width: 25%;
+  }
+  #virtues_and_flaws_box {
+    width: 25%;
+  }
+  #skills_box {
+    width: 25%;
+  }
+}
+
+/* for 700px or less */
+@media screen and (max-width: 850px) {
+  #wholepage {
+  width: 95%;
+  }
+  
+  #characteristics_box {
+    width: 35%;
+  }
+  #virtues_and_flaws_box {
+    width: 35%;
+  }
+  #skills_box {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 620px) {
+  body {
+    font-size: 20px;
+  }
+  #click_counter button {
+    font-size: 12px;
+  }
+  #wholepage {
+  width: 432px;
+  }
+  #characteristics_box {
+    width: auto;
+    float: none;
+  }
+  #virtues_and_flaws_box {
+    width: auto;
+    float: none;
+  }
+  #skills_box {
+    width: auto;
+    float: none;
+  }
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+  #wholepage {
+    width: 90%;
+  }  
+  #header {
+    height: auto;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+
