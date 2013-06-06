@@ -1,47 +1,81 @@
 body {
-  background-color: #ccc;
-  /*background-image:url('knot.png');
-  background-repeat:no-repeat;
-  background-position: right;
-  background-size: 250px 250px;*/
+  background-color: #f0e8d3;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.2em;
-  margin: 15px;
 }
+
+.fancyNav{
+  /* Affects the UL element */
+  list-style:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+  font-size:12px;
+  font-family: 'Eagle Lake', cursive;
+}
+.fancyNav li{
+  display:inline;
+}
+.fancyNav a{
+    display:inline-block;
+    padding:10px;
+    color: #d0b893;
+    text-decoration:none;
+}
+
+/*
+
+===========
+ MENU DONE
+===========
+
+*/
+
 
 h1, p {
   color: #333;
 }
 
+h2 {
+  font-family: 'Eagle Lake', cursive;
+  color: #933;
+  font-size: 16px;
+}
+
 input  {
   border: 0px;
+  font-size: 14px;
 }
 
 #character-name {
-  color: #333;
-  font-size: 24px;
+  font-family: 'Eagle Lake', cursive;
+  color: #933;
+  font-size: 32px;
   font-weight: bold;
 }
 
+#player-name {
+  font-weight: bold;
+  text-align:right;
+}
 
 #title_box {
   width: 500px;
-  border: 1px solid #ccc;
+  border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
   padding:10px;
-  margin: 100px auto 20px auto;
+  margin: 5px auto 10px auto;
   clear: both;
 }
-
-
 
 
 #cost_teller {
   font-size: 8pt;
   text-align: right;
+  color: #999;
   margin-top: 5px;
 }
 
@@ -54,6 +88,30 @@ input  {
 #click_counter_value {
   float: right;
   margin-right: 5px;
+}
+
+button {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background-color:#ededed;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}.loadsave:hover {
+  background-color:#dfdfdf;
+}.loadsave:active {
+  position:relative;
+  top:1px;
 }
 
 #click_counter button {
@@ -82,19 +140,12 @@ input  {
 
 #new_virtue_or_flaw {
   color: #ccc;
+  font-size:10px;
   background-color : #fff;
   border: 0px solid #008000;
-}
-#virtue-flaw {
-  margin-top: 5px;
 }
 
-#new_skills {
-  color: #ccc;
-  background-color : #fff;
-  border: 0px solid #008000;
-}
-#skill {
+#virtue-flaw {
   margin-top: 5px;
 }
 
@@ -105,54 +156,88 @@ STRUCTURE
 *************************************************************************************/
 #wholepage {
   padding: 5px;
-  width: 960px;
-  margin: 20px auto;
-}
-
-#header {
-  height: 180px;
+  width: 840px;
+  margin: 0px auto;
+  position: relative;
 }
 
 #characteristics_box {
+  position: absolute;
+  left:0px;
   width: 250px;
-  border: 1px solid #ccc;
+  height: 250px;
+  border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
   padding:10px;
   margin: 20px;
-  float: left;
 }
 
 #virtues_and_flaws_box {
+  position: absolute;
+  left: 0px;
+  top: 300px;
+  height: 250px;
   width: 250px;
-  border: 1px solid #ccc;
+  border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 20px;
-  float: left;
+}
+
+#relationships_box {
+  position: absolute;
+  left: 290px;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #d0b893;
+  border-radius: 5px;
+  background-color: #fff;
+  padding:10px;
+  margin: 20px;
+}
+
+#personality_box {
+  position: absolute;
+  left: 290px;
+  top: 300px;
+  height: 250px;
+  width: 250px;
+  border: 1px solid #d0b893;
+  border-radius: 5px;
+  background-color: #fff;
+  padding:10px;
+  margin: 20px;
 }
 
 #skills_box {
+  position: absolute;
+  left: 580px;  
   width: 250px;
-  border: 1px solid #ccc;
+  height: 545px;
+  border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
   padding:10px;
   margin: 20px;
-  float: left;
+  font-size: 12px;
 }
 
 #chronicle_box {
-  width: 70%;
-  border: 1px solid #ccc;
+  position: absolute;
+  width: 830px;
+  top: 620px;
+  left: 0px;
+  font-size: 12px;
+  border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
   padding:10px;
-  margin:20px auto 20px auto;
-  clear: both;
+  margin:20px;
 }
 
+/*
 /* for 980px or less */
 @media screen and (max-width: 980px) {
   #wholepage {
@@ -221,4 +306,4 @@ STRUCTURE
     font-size: 18px;
   }
 }
-
+*/

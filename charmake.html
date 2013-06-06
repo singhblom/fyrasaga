@@ -2,21 +2,33 @@
 
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Eagle+Lake' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample app</title>
+    <title>Foobar</title>
     <link rel="stylesheet" href="charmake.css">
     
     <!-- import the click-counter -->
     <link rel="import" href="xclickcounter.html">
   </head>
   <body>
+    
+    
+    <ul class="fancyNav">
+        <li id="new"><a href="#home" target="_blank">New</a></li>
+        <li id="load"><a href="#home">Load</a></li>
+        <li id="save"><a href="#news">Save</a></li>
+        <li id="saga"><a href="#about">Saga</a></li>
+    </ul>
+
     <div id="title_box">
     <input id="character-name"  bind-value='c.name'>
-    <p>Character sheet for {{c.name}}. Age
-    <input size='' style='width:30px' type="number" bind-value="c.sAge"/> 
-    in year
-    <input size='' style='width:30px' type="number" bind-value="c.sYear"/>.
+    <p>Age
+    <input size='' style='width:40px' type="number" bind-value="c.sAge"/> 
+    in the year
+    <input size='' style='width:40px' type="number" bind-value="c.sYear"/>,
+    from <input id="character-home"  bind-value='c.home' style='width:150px'>
+    <input id="player-name" bind-value='c.player' style='width:70px'>
     </p>
     </div>
   <div id="wholepage">
@@ -47,8 +59,25 @@
       </form>  
     </div>
 
+    <div id="skills_box">
+      <h2> Skills </h2>
 
-    <div id="virtues_and_flaws_box">
+      <template iterate="x in c.skills.keys">
+        <div is="x-click-counter" id="click_counter" name = {{x}} type="{{c.skills}}" deletable="{{true}}"></div>
+      </template>
+
+      <form on-submit="addDescription($event,c.skills,'#new_skill',0)">
+        <input id="new_skill" placeholder="New Skill"
+               on-change="addDescription($event,c.skills,'#new_skill',0)">
+      </form>  
+
+      <div id="cost_teller">Points used: {{totalSkillCost()}}</div>
+      <div id="cost_teller">Points available: {{120+(c.age-5)*15}}</div>
+    </div>
+    
+
+
+    <div id="relationships_box">
       <h2> Relationships </h2>
 
       <template iterate="x in c.relationships.keys">
@@ -61,23 +90,20 @@
       </form>  
     </div>
 
-    <div id="skills_box">
-      <h2> Skills </h2>
+    <div id="personality_box">
+      <h2> Personality </h2>
 
-      <template iterate="x in c.skills.keys">
-        <div is="x-click-counter" id="click_counter" name = {{x}} type="{{c.skills}}"></div>
+      <template iterate="x in c.personality.keys">
+        <div id="virtue-flaw">{{x}}</div>
       </template>
 
-      <form on-submit="addDescription($event,c.skills,'#new_skill',0)">
-        <input id="new_skill" placeholder="New Skill"
-               on-change="addDescription($event,c.skills,'#new_skill',0)">
+      <form on-submit="addDescription($event,c.personality,'#new_personality','')">
+        <input id="new_personality" placeholder="New Personality Trait"
+               on-change="addDescription($event,c.personality,'#new_personality','')">
       </form>  
-
-      <div id="cost_teller">Points used: {{totalSkillCost()}}</div>
-      <div id="cost_teller">Points available: {{c.age*15}}</div>
     </div>
     
-    
+
     <div id="chronicle_box">
       <h2> Chronicle </h2>
 
@@ -89,19 +115,16 @@
         <input id="new_chronicle" placeholder="New Chronicle"
                on-change="addDescription($event,c.chronicle,'#new_chronicle','')">
       </form>  
-    </div>
 
-
-    <div id="chronicle_box">
       <h2> Character </h2>
-      <p> {{c.stringify()}} </p>
+      <input id="character-stats"  bind-value='charStat' size="80">
+      <button type="savebutton" on-click="saveCharacter()">Save</button> 
+      <button type="savebutton" on-click="loadCharacter()">Load</button> 
+      
     </div>
 
-    
-    
     </div>
-
+    
     <script type="application/dart" src="charmake.dart"></script>
-    <script src="packages/browser/dart.js"></script>
   </body>
 </html>

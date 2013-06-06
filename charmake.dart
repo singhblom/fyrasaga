@@ -6,21 +6,26 @@ import 'dart:json' as json;
 class Character {
   Map characteristics = {"Intelligence":0,"Perception":0,"Strength":0,"Stamina":0,"Presence":0,
                          "Communication":0,"Quickness":0,"Dexterity":0};
-  String sAge = '0';
-  String sYear = '0';
+  String sAge = '18';
+  String sYear = '1';
   bool magus = false;
-  String name;
+  String name = "Outis";
+  String player = "Nemo";
+  String home = "Far away";
   Map virtuesAndFlaws = {};
   Map skills = {};
   Map relationships = {};
   Map arts = {};
-  List personality = [];
+  Map personality = {};
   List belongings = [];
   Map chronicle = {};
   
   Character(this.name);
   
-  Character.fromJson(Map input) {
+  void fromJson(Map input) {
+    name = input['Name'];
+    player = input['Player'];
+    home = input['Home'];
     characteristics = input['Characteristics'];
     sAge = input['Age'].toString();
     sYear = input['Year'].toString();
@@ -34,8 +39,13 @@ class Character {
     chronicle = input['Chronicle'];
   }
   
+  
+  
   String stringify() {
     Map output = {};
+    output['Name'] = name;
+    output['Home'] = home;
+    output['Player'] = player;
     output['Characteristics'] = characteristics;
     output['Age'] = this.age;
     output['Year'] = this.year;
@@ -53,7 +63,10 @@ class Character {
   int get year => int.parse(sYear);
 }
 
+
+
 var c = new Character("Outis");
+var charStat = c.stringify();
 
 int pyramid(number) {
   if (number > 0) return (number*(number+1)/2).round();
@@ -74,6 +87,33 @@ void addDescription(Event e, Map desc, String field, var init) {
   input.value = '';
 }
 
+void saveCharacter() {
+  /*
+  HttpRequest request = new HttpRequest(); // create a new XHR
+
+  // POST the data to the server http://localhost:9080/
+  var url = "http://127.0.0.1:9080/savecharacter";
+  request.open("POST", url, async: false);
+
+  String jsonData = c.stringify(); // etc...
+  request.send(jsonData); // perform the async POST*/
+  charStat = c.stringify();
+  query('title').text = c.name;
+}
+
+void loadCharacter() {
+  /*
+  HttpRequest request = new HttpRequest(); // create a new XHR
+
+  // POST the data to the server http://localhost:9080/
+  var url = "http://127.0.0.1:9080/savecharacter";
+  request.open("POST", url, async: false);
+
+  String jsonData = c.stringify(); // etc...
+  request.send(jsonData); // perform the async POST*/
+  c.fromJson(json.parse(charStat));
+  query('title').text = c.name;
+}
 
 int totalSkillCost() {
   int tot = 0;
