@@ -1,7 +1,8 @@
 import 'dart:html';
 import 'package:web_ui/web_ui.dart';
 import 'dart:json' as json;
-
+import 'package:widget/widget.dart';
+import 'xclickcounter.dart';
 
 class Character {
   Map characteristics = {"Intelligence":0,"Perception":0,"Strength":0,"Stamina":0,"Presence":0,

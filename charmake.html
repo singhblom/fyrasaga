@@ -10,16 +10,51 @@
     
     <!-- import the click-counter -->
     <link rel="import" href="xclickcounter.html">
+    <link rel="import" href="package:widget/components/modal.html">
   </head>
   <body>
     
     
     <ul class="fancyNav">
         <li id="new"><a href="#home" target="_blank">New</a></li>
-        <li id="load"><a href="#home">Load</a></li>
-        <li id="save"><a href="#news">Save</a></li>
-        <li id="saga"><a href="#about">Saga</a></li>
+        <li id="load"><a on-click="query('#modal_load').xtag.show();">Load</a></li>
+        <li id="save"><a on-click="query('#modal_save').xtag.show();">Save</a></li>
     </ul>
+
+    <x-modal id="modal_load">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Load Character</h3>
+      </div>
+      <div class="modal-body">
+        <p>Paste the character's json into the field below, and click Load.</p>
+  
+        <input id="character-stats"  bind-value='charStat' size="80">
+
+      </div>
+      <div class="modal-footer">
+        <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="savebutton" on-click="loadCharacter()">Load</button> 
+      </div>
+    </x-modal>
+
+    <x-modal id="modal_save">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Save Character</h3>
+      </div>
+      <div class="modal-body">
+        <p>Paste the character's json into a text editor to save it.</p>
+  
+        <p> {{charStat}} </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="savebutton" on-click="saveCharacter()">Update json</button> 
+      </div>
+    </x-modal>
+
 
     <div id="title_box">
     <input id="character-name"  bind-value='c.name'>
@@ -116,11 +151,6 @@
                on-change="addDescription($event,c.chronicle,'#new_chronicle','')">
       </form>  
 
-      <h2> Character </h2>
-      <input id="character-stats"  bind-value='charStat' size="80">
-      <button type="savebutton" on-click="saveCharacter()">Save</button> 
-      <button type="savebutton" on-click="loadCharacter()">Load</button> 
-      
     </div>
 
     </div>
