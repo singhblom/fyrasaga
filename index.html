@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- This file was auto-generated from web/charmake.html. -->
+<html><head><style>template { display: none; }</style>
+    <link href="http://fonts.googleapis.com/css?family=Eagle+Lake" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foobar</title>
+    <link rel="stylesheet" href="../charmake.css">
+    
+    <!-- import the click-counter -->
+    <link rel="import" href="../xclickcounter.html">
+    <link rel="import" href="package:widget/components/modal.html">
+  </head>
+  <body>
+    
+    <ul class="fancyNav">
+        <li id="new"><a href="#home" target="_blank">New</a></li>
+        <li id="load"><a>Load</a></li>
+        <li id="save"><a>Save</a></li>
+    </ul>
+
+    <div is="x-modal" id="modal_load">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Load Character</h3>
+      </div>
+      <div class="modal-body">
+        <p>Paste the character's json into the field below, and click Load.</p>
+  
+        <input id="character-stats" size="80">
+
+      </div>
+      <div class="modal-footer">
+        <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="savebutton">Load</button> 
+      </div>
+    </div>
+
+    <div is="x-modal" id="modal_save">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Save Character</h3>
+      </div>
+      <div class="modal-body">
+        <p>Paste the character's json into a text editor to save it.</p>
+  
+        <p></p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+
+    <div id="title_box">
+    <input id="character-name">
+    <p>Age
+    <input size="" style="width:40px" type="number"> 
+    in the year
+    <input size="" style="width:40px" type="number">,
+    from <input id="character-home" style="width:150px">
+    <input id="player-name" style="width:70px">
+    </p>
+    </div>
+  <div id="wholepage">
+    <div id="characteristics_box">
+      <h2> Characteristics </h2>
+      <div is="x-click-counter" id="click_counter" name="Intelligence"></div>
+      <div is="x-click-counter" id="click_counter" name="Perception"></div>
+      <div is="x-click-counter" id="click_counter" name="Strength"></div>
+      <div is="x-click-counter" id="click_counter" name="Stamina"></div>
+      <div is="x-click-counter" id="click_counter" name="Presence"></div>
+      <div is="x-click-counter" id="click_counter" name="Communication"></div>
+      <div is="x-click-counter" id="click_counter" name="Quickness"></div>
+      <div is="x-click-counter" id="click_counter" name="Dexterity"></div>
+      <div id="cost_teller"></div>
+    </div>
+
+
+    <div id="virtues_and_flaws_box">
+      <h2> Virtues and Flaws </h2>
+
+      <template></template>
+
+      <form>
+        <input id="new_virtue_or_flaw" placeholder="New Virtue or Flaw">
+      </form>  
+    </div>
+
+    <div id="skills_box">
+      <h2> Skills </h2>
+
+      <template></template>
+
+      <form>
+        <input id="new_skill" placeholder="New Skill">
+      </form>  
+
+      <div id="cost_teller"></div>
+      <div id="cost_teller"></div>
+    </div>
+    
+
+
+    <div id="relationships_box">
+      <h2> Relationships </h2>
+
+      <template></template>
+
+      <form>
+        <input id="new_relationship" placeholder="New Relationship">
+      </form>  
+    </div>
+
+    <div id="personality_box">
+      <h2> Personality </h2>
+
+      <template></template>
+
+      <form>
+        <input id="new_personality" placeholder="New Personality Trait">
+      </form>  
+    </div>
+    
+
+    <div id="chronicle_box">
+      <h2> Chronicle </h2>
+
+      <template></template>
+
+      <form>
+        <input id="new_chronicle" placeholder="New Chronicle">
+      </form>  
+
+    </div>
+
+    </div>
+    
+    
+    <script src="../packages/browser/dart.js"></script>
+  
+
+<script type="application/dart" src="charmake.html_bootstrap.dart"></script></body></html>
