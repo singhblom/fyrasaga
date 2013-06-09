@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <element name="x-click-counter" constructor="CounterComponent" extends="div">
+      <template>
+        <div>
+          <span>{{name}}</span>
+          <button on-click="remove()" template instantiate="if deletable">x</button>
+          <button on-click="decrement()">&ndash;</button>
+          <button on-click="increment()">+</button>
+          <span id="click_counter_value">{{type[name]}} </span>
+        </div>
+      </template>
+      <script type="application/dart" src="xclickcounter.dart"></script>
+    </element>
+  </body>
+</html>

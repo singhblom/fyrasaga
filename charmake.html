@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Eagle+Lake' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foobar</title>
+    <link rel="stylesheet" href="charmake.css">
+    
+    <!-- import the click-counter -->
+    <link rel="import" href="xclickcounter.html">
+    <link rel="import" href="package:widget/components/modal.html">
+  </head>
+  <body>
+    
+    <ul class="fancyNav">
+        <li id="new"><a href="#home" target="_blank">New</a></li>
+        <li id="load"><a on-click="query('#modal_load').xtag.show();">Load</a></li>
+        <li id="save"><a on-click="saveCharacter()">Save</a></li>
+    </ul>
+
+    <x-modal id="modal_load">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Load Character</h3>
+      </div>
+      <div class="modal-body">
+        <p>Paste the character's json into the field below, and click Load.</p>
+  
+        <input id="character-stats"  bind-value='charStat' size="80">
+
+      </div>
+      <div class="modal-footer">
+        <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="savebutton" on-click="loadCharacter()">Load</button> 
+      </div>
+    </x-modal>
+
+    <x-modal id="modal_save">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Save Character</h3>
+      </div>
+      <div class="modal-body">
+        <p>Paste the character's json into a text editor to save it.</p>
+  
+        <p> {{charStat}} </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </x-modal>
+
+
+    <div id="title_box">
+    <input id="character-name"  bind-value='c.name'>
+    <p>Age
+    <input size='' style='width:40px' type="number" bind-value="c.sAge"/> 
+    in the year
+    <input size='' style='width:40px' type="number" bind-value="c.sYear"/>,
+    from <input id="character-home"  bind-value='c.home' style='width:150px'>
+    <input id="player-name" bind-value='c.player' style='width:70px'>
+    </p>
+    </div>
+  <div id="wholepage">
+    <div id="characteristics_box">
+      <h2> Characteristics </h2>
+      <div is="x-click-counter" id="click_counter" name = "Intelligence" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Perception" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Strength" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Stamina" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Presence" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Communication" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Quickness" type="{{c.characteristics}}"></div>
+      <div is="x-click-counter" id="click_counter" name = "Dexterity" type="{{c.characteristics}}"></div>
+      <div id="cost_teller">Points used: {{totalCost()}}</div>
+    </div>
+
+
+    <div id="virtues_and_flaws_box">
+      <h2> Virtues and Flaws </h2>
+
+      <template iterate="x in c.virtuesAndFlaws.keys">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addDescription($event,c.virtuesAndFlaws,'#new_virtue_or_flaw','')">
+        <input id="new_virtue_or_flaw" placeholder="New Virtue or Flaw"
+               on-change="addDescription($event,c.virtuesAndFlaws,'#new_virtue_or_flaw','')">
+      </form>  
+    </div>
+
+    <div id="skills_box">
+      <h2> Skills </h2>
+
+      <template iterate="x in c.skills.keys">
+        <div is="x-click-counter" id="click_counter" name = {{x}} type="{{c.skills}}" deletable="{{true}}"></div>
+      </template>
+
+      <form on-submit="addDescription($event,c.skills,'#new_skill',0)">
+        <input id="new_skill" placeholder="New Skill"
+               on-change="addDescription($event,c.skills,'#new_skill',0)">
+      </form>  
+
+      <div id="cost_teller">Points used: {{totalSkillCost()}}</div>
+      <div id="cost_teller">Points available: {{120+(c.age-5)*15}}</div>
+    </div>
+    
+
+
+    <div id="relationships_box">
+      <h2> Relationships </h2>
+
+      <template iterate="x in c.relationships.keys">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addDescription($event,c.relationships,'#new_relationship','')">
+        <input id="new_relationship" placeholder="New Relationship"
+               on-change="addDescription($event,c.relationships,'#new_relationship','')">
+      </form>  
+    </div>
+
+    <div id="personality_box">
+      <h2> Personality </h2>
+
+      <template iterate="x in c.personality.keys">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addDescription($event,c.personality,'#new_personality','')">
+        <input id="new_personality" placeholder="New Personality Trait"
+               on-change="addDescription($event,c.personality,'#new_personality','')">
+      </form>  
+    </div>
+    
+
+    <div id="chronicle_box">
+      <h2> Chronicle </h2>
+
+      <template iterate="x in c.chronicle.keys">
+        <div id="virtue-flaw">{{x}}</div>
+      </template>
+
+      <form on-submit="addDescription($event,c.chronicle,'#new_chronicle','')">
+        <input id="new_chronicle" placeholder="New Chronicle"
+               on-change="addDescription($event,c.chronicle,'#new_chronicle','')">
+      </form>  
+
+    </div>
+
+    </div>
+    
+    <script type="application/dart" src="charmake.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

@@ -1,9 +1,6 @@
-/* Auto-generated from style sheet href = web/charmake.css */
-/* DO NOT EDIT. */
-
 body {
   background-color: #f0e8d3;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.2em;
@@ -17,22 +14,24 @@ body {
   margin-left: -280px;
   background-color: #fff;
   border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0,0,0,0.3);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   outline: 0;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 7px rgba(0,0,0,0.3);
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
 }
+
 .modal-header {
   padding: 9px 15px;
   border-bottom: 1px solid #eee;
 }
+
 button.close {
   padding: 0;
   cursor: pointer;
@@ -50,216 +49,291 @@ button.close {
   opacity: .2;
   filter: alpha(opacity=20);
 }
+
 .modal-header h3 {
-  font-family: "Eagle Lake", cursive;
-  color: #933;
+  font-family: 'Eagle Lake', cursive;
+  color :#933;
   margin: 0;
   line-height: 30px;
   text-align: center;
 }
+
 .modal-body {
-  position: relative;
-  max-height: 400px;
-  padding: 15px;
-  overflow-y: auto;
+position: relative;
+max-height: 400px;
+padding: 15px;
+overflow-y: auto;
 }
+
 .modal-footer {
-  padding: 14px 15px 15px;
-  margin-bottom: 0;
-  text-align: right;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: inset 0 1px 0 #fff;
-  -moz-box-shadow: inset 0 1px 0 #fff;
-  box-shadow: inset 0 1px 0 #fff;
+padding: 14px 15px 15px;
+margin-bottom: 0;
+text-align: right;
+background-color: #f5f5f5;
+border-top: 1px solid #ddd;
+-webkit-border-radius: 0 0 6px 6px;
+-moz-border-radius: 0 0 6px 6px;
+border-radius: 0 0 6px 6px;
+-webkit-box-shadow: inset 0 1px 0 #fff;
+-moz-box-shadow: inset 0 1px 0 #fff;
+box-shadow: inset 0 1px 0 #fff;
 }
+
+
 .btn {
-  display: inline-block;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  color: #333;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  vertical-align: middle;
-  cursor: pointer;
-  background-color: #f5f5f5;
-  background-image: -moz-linear-gradient(top, #fff, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #fff, #e6e6e6);
-  background-image: -o-linear-gradient(top, #fff, #e6e6e6);
-  background-image: linear-gradient(to bottom, #fff, #e6e6e6);
-  background-repeat: repeat-x;
-  border: 1px solid #ccc;
-  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  border-bottom-color: #b3b3b3;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+display: inline-block;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 14px;
+line-height: 20px;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+vertical-align: middle;
+cursor: pointer;
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+background-repeat: repeat-x;
+border: 1px solid #ccc;
+border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+border-bottom-color: #b3b3b3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
 }
+
 .btn-primary {
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #006dcc;
-  background-image: -moz-linear-gradient(top, #08c, #04c);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#08c), to(#04c));
-  background-image: -webkit-linear-gradient(top, #08c, #04c);
-  background-image: -o-linear-gradient(top, #08c, #04c);
-  background-image: linear-gradient(to bottom, #08c, #04c);
-  background-repeat: repeat-x;
-  border-color: #04c #04c #002a80;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+color: #fff;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+background-color: #006dcc;
+background-image: -moz-linear-gradient(top,#08c,#04c);
+background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#04c));
+background-image: -webkit-linear-gradient(top,#08c,#04c);
+background-image: -o-linear-gradient(top,#08c,#04c);
+background-image: linear-gradient(to bottom,#08c,#04c);
+background-repeat: repeat-x;
+border-color: #04c #04c #002a80;
+border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc',endColorstr='#ff0044cc',GradientType=0);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
-.fancyNav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-size: 12px;
-  font-family: "Eagle Lake", cursive;
+
+
+
+/*
+===============
+   NEW STUFF
+===============
+
+
+
+.input {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  border: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color:#333;
+  margin-bottom:4px;
+  line-height: normal;
+  vertical-align: bottom;
 }
-.fancyNav li {
-  display: inline;
+
+input[type="number"] {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  border: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color:#333;
+  margin-bottom:4px;
 }
-.fancyNav a {
-  display: inline-block;
-  padding: 10px;
-  color: #d0b893;
-  text-decoration: none;
+
+*/
+
+.fancyNav{
+  /* Affects the UL element */
+  list-style:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+  font-size:12px;
+  font-family: 'Eagle Lake', cursive;
 }
+.fancyNav li{
+  display:inline;
+}
+.fancyNav a{
+    display:inline-block;
+    padding:10px;
+    color: #d0b893;
+    text-decoration:none;
+}
+
+/*
+
+===========
+ MENU DONE
+===========
+
+*/
+
+
 h1, p {
   color: #333;
 }
+
 h2 {
-  font-family: "Eagle Lake", cursive;
+  font-family: 'Eagle Lake', cursive;
   color: #933;
   font-size: 16px;
 }
-input {
+
+input  {
   border: 0px;
   font-size: 14px;
 }
+
 #character-name {
-  font-family: "Eagle Lake", cursive;
+  font-family: 'Eagle Lake', cursive;
   color: #933;
   font-size: 32px;
   font-weight: bold;
 }
+
 #player-name {
   font-weight: bold;
-  text-align: right;
+  text-align:right;
 }
+
 #title_box {
   width: 500px;
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 5px auto 10px auto;
   clear: both;
 }
+
+
 #cost_teller {
   font-size: 8pt;
   text-align: right;
   color: #999;
   margin-top: 5px;
 }
+
+
 #click_counter {
   text-align: left;
   margin-top: 5px;
 }
+
 #click_counter_value {
   float: right;
   margin-right: 5px;
 }
+
 button {
-  -moz-box-shadow: inset 0px 1px 0px 0px #fff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #fff;
-  box-shadow: inset 0px 1px 0px 0px #fff;
-  background-color: #ededed;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #dcdcdc;
-  display: inline-block;
-  color: #777;
-  font-family: arial;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 6px 10px;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px #fff;
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background-color:#ededed;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}.loadsave:hover {
+  background-color:#dfdfdf;
+}.loadsave:active {
+  position:relative;
+  top:1px;
 }
-.loadsave:hover {
-  background-color: #dfdfdf;
-}
-.loadsave:active {
-  position: relative;
-  top: 1px;
-}
+
 #click_counter button {
-  -moz-box-shadow: inset 0px 1px 0px 0px #fff;
-  -webkit-box-shadow: inset 0px 1px 0px 0px #fff;
-  box-shadow: inset 0px 1px 0px 0px #fff;
-  background-color: #ededed;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  display: inline-block;
-  color: #777;
-  padding: 2px 4px;
-  text-decoration: none;
-  text-shadow: 1px 1px 0px #fff;
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background-color:#ededed;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  display:inline-block;
+  color:#777777;
+  padding:2px 4px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
   font-size: 6pt;
-  border-radius: 2px;
-  border: 1px solid #dcdcdc;
-  vertical-align: middle;
+  border-radius:2px;
+  border:1px solid #dcdcdc;
+  vertical-align:middle;
   float: right;
+}.classname:hover {
+  background-color:#dfdfdf;
+}.classname:active {
+  position:relative;
+  top:1px;
 }
-.classname:hover {
-  background-color: #dfdfdf;
-}
-.classname:active {
-  position: relative;
-  top: 1px;
-}
+
 #new_virtue_or_flaw {
   color: #ccc;
-  font-size: 10px;
-  background-color: #fff;
+  font-size:10px;
+  background-color : #fff;
   border: 0px solid #008000;
 }
+
 #virtue-flaw {
   margin-top: 5px;
 }
+
+
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
 #wholepage {
   padding: 5px;
   width: 840px;
   margin: 0px auto;
   position: relative;
 }
+
 #characteristics_box {
   position: absolute;
-  left: 0px;
+  left:0px;
   width: 250px;
   height: 250px;
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 20px;
 }
+
 #virtues_and_flaws_box {
   position: absolute;
   left: 0px;
@@ -269,9 +343,10 @@ button {
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 20px;
 }
+
 #relationships_box {
   position: absolute;
   left: 290px;
@@ -280,9 +355,10 @@ button {
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 20px;
 }
+
 #personality_box {
   position: absolute;
   left: 290px;
@@ -292,21 +368,23 @@ button {
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 20px;
 }
+
 #skills_box {
   position: absolute;
-  left: 580px;
+  left: 580px;  
   width: 250px;
   height: 545px;
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
+  padding:10px;
   margin: 20px;
   font-size: 12px;
 }
+
 #chronicle_box {
   position: absolute;
   width: 830px;
@@ -316,67 +394,77 @@ button {
   border: 1px solid #d0b893;
   border-radius: 5px;
   background-color: #fff;
-  padding: 10px;
-  margin: 20px;
-} @media screen AND (max-width:980px) {
-#wholepage {
-  width: 94%;
-}
-#characteristics_box {
-  width: 25%;
-}
-#virtues_and_flaws_box {
-  width: 25%;
-}
-#skills_box {
-  width: 25%;
-}
-} @media screen AND (max-width:850px) {
-#wholepage {
-  width: 95%;
-}
-#characteristics_box {
-  width: 35%;
-}
-#virtues_and_flaws_box {
-  width: 35%;
-}
-#skills_box {
-  width: 35%;
-}
-} @media screen AND (max-width:620px) {
-body {
-  font-size: 20px;
-}
-#click_counter button {
-  font-size: 12px;
-}
-#wholepage {
-  width: 432px;
-}
-#characteristics_box {
-  width: auto;
-  float: none;
-}
-#virtues_and_flaws_box {
-  width: auto;
-  float: none;
-}
-#skills_box {
-  width: auto;
-  float: none;
-}
-} @media screen AND (max-width:480px) {
-#wholepage {
-  width: 90%;
-}
-#header {
-  height: auto;
-}
-h1 {
-  font-size: 18px;
-}
-}
-* {
+  padding:10px;
+  margin:20px;
 }
 
+/*
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+  #wholepage {
+  width: 94%;  
+  }
+  
+  #characteristics_box {
+    width: 25%;
+  }
+  #virtues_and_flaws_box {
+    width: 25%;
+  }
+  #skills_box {
+    width: 25%;
+  }
+}
+
+/* for 700px or less */
+@media screen and (max-width: 850px) {
+  #wholepage {
+  width: 95%;
+  }
+  
+  #characteristics_box {
+    width: 35%;
+  }
+  #virtues_and_flaws_box {
+    width: 35%;
+  }
+  #skills_box {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 620px) {
+  body {
+    font-size: 20px;
+  }
+  #click_counter button {
+    font-size: 12px;
+  }
+  #wholepage {
+  width: 432px;
+  }
+  #characteristics_box {
+    width: auto;
+    float: none;
+  }
+  #virtues_and_flaws_box {
+    width: auto;
+    float: none;
+  }
+  #skills_box {
+    width: auto;
+    float: none;
+  }
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+  #wholepage {
+    width: 90%;
+  }  
+  #header {
+    height: auto;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+*/
