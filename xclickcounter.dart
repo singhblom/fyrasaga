@@ -1,3 +1,5 @@
+library xclickcounter;
+
 import 'package:web_ui/web_ui.dart';
 
 class CounterComponent extends WebComponent {

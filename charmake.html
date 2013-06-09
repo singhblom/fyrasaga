@@ -17,7 +17,7 @@
     <ul class="fancyNav">
         <li id="new"><a href="#home" target="_blank">New</a></li>
         <li id="load"><a on-click="query('#modal_load').xtag.show();">Load</a></li>
-        <li id="save"><a on-click="query('#modal_save').xtag.show();">Save</a></li>
+        <li id="save"><a on-click="saveCharacter()">Save</a></li>
     </ul>
 
     <x-modal id="modal_load">
@@ -50,7 +50,6 @@
       </div>
       <div class="modal-footer">
         <button type="savebutton" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button type="savebutton" on-click="saveCharacter()">Update json</button> 
       </div>
     </x-modal>
 
